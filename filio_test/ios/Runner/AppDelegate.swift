@@ -6,6 +6,7 @@ import Flutter
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
     DatabaseHelper.shared.getDB()
+    // native code will be called here and increment will happen
     let channel = FlutterMethodChannel(name: "increment_counter", binaryMessenger: self.window!.rootViewController!.platformMessenger)
     channel.setMethodCallHandler { call, result in
       if call.method == "increment" {
